@@ -44,6 +44,12 @@ const game = () => {
         const computerScore = document.querySelector('.computer-score p');
         playerScore.textContent =scoreP;
         computerScore.textContent =scoreC;
+        if(playerScore.textContent>computerScore.textContent){
+            playerScore.style.color="green"
+        }
+        else if(playerScore.textContent<computerScore.textContent) {
+            playerScore.style.color="red"
+        }
 
     };
     const compareHands = (playerSelection, computerSelection) => {
@@ -51,6 +57,7 @@ const game = () => {
         if (playerSelection==="stone"){
             if(computerSelection==="paper"){
                 winner.innerText= 'Computer Win';
+                winner.style.color="red";
                 console.log('Computer Win')
                 scoreC++;
                 updateScore();
@@ -59,10 +66,12 @@ const game = () => {
             else if(computerSelection==="stone") {
                 console.log('Tied Game')
                 winner.innerText= 'Tied Game';
+                winner.style.color="blue";
                 return;
             }
             else {
                 winner.innerText= 'Player Win';
+                winner.style.color="white";
                 scoreP++;
                 updateScore();
                 return;
@@ -71,6 +80,7 @@ const game = () => {
         else if(playerSelection==="paper"){
             if(computerSelection==="scissors"){
                 winner.innerText= 'Computer Win';
+                winner.style.color="red";
                 scoreC++;
                 updateScore();
                 console.log('Computer Win')
@@ -78,12 +88,14 @@ const game = () => {
             }
             else if(computerSelection==="paper"){
                 winner.innerText= 'Tied Game';
+                winner.style.color="blue";
                 console.log('Tied Game')
                 return;
             }
             else {
                 console.log('Player Win');
                 winner.innerText= 'Player Win';
+                winner.style.color="white";
                 scoreP++;
                 updateScore();
                 return;
@@ -92,6 +104,7 @@ const game = () => {
         else {
             if(computerSelection==="stone"){
                 winner.innerText= 'Computer Win';
+                winner.style.color="red";
                 scoreC++;
                 updateScore();
                 console.log('Computer Win');
@@ -99,11 +112,13 @@ const game = () => {
             }
            else if(computerSelection==="scissors"){
                 winner.innerText= 'Tied Game';
+                winner.style.color="blue";
                 console.log('Tied Game');
                 return;
             }
             else {
                 winner.innerText= 'Player Win';
+                winner.style.color="white";
                 scoreP++;
                 updateScore();
                 console.log('Player Win');
