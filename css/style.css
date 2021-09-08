@@ -74,6 +74,7 @@ body{
     width: 150px; 
     z-index: 99; 
 }
+
 .game-number{
     z-index: 99;
 }
@@ -84,6 +85,17 @@ body{
 .game-number input{
     
     font-size: 25px;
+}
+.gleft-title{
+    color:orange;
+}
+.g-remain{
+    display:inline-block;
+    color:rgb(26, 26, 26);
+    background-color:whitesmoke;
+    border-radius:50%;
+    min-width: 25px;
+    font-weight:bold;
 }
 .match{
     position:absolute;

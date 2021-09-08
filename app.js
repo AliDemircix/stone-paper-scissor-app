@@ -9,6 +9,7 @@ const game = () => {
            const introScreen = document.querySelector('.intro');
            const matchScreen = document.querySelector('.match');
            const scoresScreen = document.querySelector('.scores');
+           const remainedGame = document.querySelector('.g-remain');
            introScreen.classList.add('fadeOut');
            matchScreen.classList.add('fadeIn');
            scoresScreen.classList.add('fadeIn');
@@ -20,6 +21,8 @@ const game = () => {
                     break;
                 }
             }
+        
+        remainedGame.textContent=gameNumber;
        })
     }
 
@@ -44,7 +47,7 @@ const game = () => {
             computerHand.src=`./img/${computerSelection}.png`;
            
             compareHands(playerSelection, computerSelection);
-            // Game number decrease
+          
             
            
       
@@ -57,6 +60,8 @@ const game = () => {
     const updateScore = () => {
         const playerScore = document.querySelector('.player-score p');
         const computerScore = document.querySelector('.computer-score p');
+        const remainedGame = document.querySelector('.g-remain');
+        remainedGame.textContent=gameNumber;
         playerScore.textContent =scoreP;
         computerScore.textContent =scoreC;
 
@@ -81,8 +86,8 @@ const game = () => {
       
       
         if(scoreP>scoreC) {
-            introScreen.innerText= 'GAME OVER YOU WIN '; 
-            introScreen.style.color="green";
+            introScreen.innerText= 'YOU WIN...!!! '; 
+            introScreen.style.color="lightgreen";
         }
         else if(scoreP<scoreC){
             introScreen.innerText= 'GAME OVER YOU LOST ';
@@ -90,6 +95,7 @@ const game = () => {
         }
         else if(scoreP=scoreC){
             introScreen.innerText= 'GAME OVER THERE IS NO WINNER ';
+            introScreen.style.color="orange";
         }
        
       return;      
@@ -183,10 +189,10 @@ const game = () => {
             compareGame();
             const introScreen = document.querySelector('.intro');
             const matchScreen = document.querySelector('.match');
-            const scoresScreen = document.querySelector('.scores');
+            const gameNum = document.querySelector('.game-number');
             introScreen.classList.remove('fadeOut');
             matchScreen.classList.remove('fadeIn');
-            scoresScreen.classList.add('fadeIn');
+            gameNum.remove();
             const playBtn = document.querySelector('.play-btn');
             playBtn.addEventListener('click', function(){
                 window.location.reload();
