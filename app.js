@@ -44,11 +44,18 @@ const game = () => {
         const computerScore = document.querySelector('.computer-score p');
         playerScore.textContent =scoreP;
         computerScore.textContent =scoreC;
-        if(playerScore.textContent>computerScore.textContent){
-            playerScore.style.color="green"
+        if(parseInt(playerScore.textContent)>parseInt(computerScore.textContent)){
+            playerScore.style.color="green";
+            computerScore.style.color="red";
+
         }
-        else if(playerScore.textContent<computerScore.textContent) {
-            playerScore.style.color="red"
+        else if(parseInt(playerScore.textContent)<parseInt(computerScore.textContent)) {
+            playerScore.style.color="red";
+            computerScore.style.color="green";
+        }
+        else if(parseInt(playerScore.textContent)===parseInt(computerScore.textContent)) {
+            playerScore.style.color="orange";
+            computerScore.style.color="orange";
         }
 
     };

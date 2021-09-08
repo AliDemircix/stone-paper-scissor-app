@@ -44,7 +44,14 @@ body{
     font-size: 24px;
     font-weight: bold;
     color:var(--hrcolor);
-}
+    display: inline-block;
+    background-color:rgb(221, 239, 252);
+    border-radius: 50%;
+    min-width: 30px;
+    margin-top: 10px;
+
+ }
+
 .intro {
     display: flex;
     height:50vh;
