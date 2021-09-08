@@ -49,7 +49,6 @@ body{
     border-radius: 50%;
     min-width: 30px;
     margin-top: 10px;
-
  }
 
 .intro {
@@ -74,6 +73,17 @@ body{
     height:50px;
     width: 150px; 
     z-index: 99; 
+}
+.game-number{
+    z-index: 99;
+}
+.game-number label {
+    color: whitesmoke;
+    font-size: 25px;
+}
+.game-number input{
+    
+    font-size: 25px;
 }
 .match{
     position:absolute;
